@@ -4,9 +4,15 @@ package com.developpement.guide.myapplication
 import android.database.sqlite.SQLiteDatabase
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MotionEvent
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import android.text.Editable
+import android.text.TextWatcher
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,14 +26,28 @@ class MainActivity : AppCompatActivity() {
         val messageText = findViewById<EditText>(R.id.edittext)
         val dbHandler = MyDBHandler(this, null, null, 1)
 
+        val filterTextWatcher = object : TextWatcher {
+
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+
+            }
+
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun afterTextChanged(s: Editable) {
+
+            }
+        }
+
         buttonOneGram.setOnClickListener {
             var word : String
             word = messageText.text.toString()
             var word1 : String
             word1 = dbHandler.findOneGram(word).toString()
             messageText.setText(word + word1)
-            
-    }
+        }
 
         buttonTwoGram.setOnClickListener {
 
@@ -36,6 +56,9 @@ class MainActivity : AppCompatActivity() {
         buttonThreeGram.setOnClickListener{
 
         }
+
+        messageText.addTextChangedListener(filterTextWatcher)
+
 
     }
 }

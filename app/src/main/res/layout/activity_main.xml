@@ -7,8 +7,6 @@
     tools:context=".MainActivity">
 
     <TextView
-
-
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -70,7 +68,7 @@
         android:id="@+id/onegram"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" 1 - Gram"
+        android:text="@string/noWord"
         app:layout_constraintBottom_toTopOf="@id/edittext"
         app:layout_constraintEnd_toStartOf="@+id/twogram"
         app:layout_constraintHorizontal_bias="0.5"
@@ -81,7 +79,7 @@
         android:id="@+id/twogram"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" 2 - Gram"
+        android:text="@string/noWord"
         app:layout_constraintBottom_toTopOf="@id/edittext"
         app:layout_constraintEnd_toStartOf="@+id/threegram"
         app:layout_constraintHorizontal_bias="0.5"
@@ -92,7 +90,7 @@
         android:id="@+id/threegram"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" 3- Gram"
+        android:text="@string/noWord"
         app:layout_constraintBottom_toTopOf="@id/edittext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
